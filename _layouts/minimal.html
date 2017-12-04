@@ -1,26 +1,20 @@
 ---
-common-css:
-  - "/css/bootstrap.min.css"
-  - "/css/main-minimal.css"
-common-js:
-  - "/js/jquery-1.11.2.min.js"
-  - "/js/bootstrap.min.js"
+layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+    {% include head.html %}
+    <body class="has-push-menu">
+        {% include svg-icons.html %}
+        {% include header.html %}
+        <section class="post">
 
-  {% include head.html %}
+            <article id="post" class="post-content" role="main" itemprop="mainContentOfPage">
+                {{ content }}
+            </article>
 
-  <body>
-
-    <div role="main" class="container">
-      {{ content }}
-    </div>
-
-    {% include footer-minimal.html %}
-  
-    {% include footer-scripts.html %}
-  
-  </body>
+            {% include footer.html %}
+        </section>
+    </body>
 </html>

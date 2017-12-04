@@ -1,9 +1,6 @@
-# project
-_site
-.sass-cache
-.vagrant
-
-# general
+.idea
 .DS_Store
-Thumbs.db
-ehthumbs.db
+.sass-cache
+_site
+node_modules
+_drafts

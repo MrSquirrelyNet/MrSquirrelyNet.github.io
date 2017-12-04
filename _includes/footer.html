@@ -1,95 +1,43 @@
 <footer>
-  <div class="container beautiful-jekyll-footer">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          {% if site.author.facebook and site.footer-links-active.facebook %}
-          <li>
-            <a href="https://www.facebook.com/{{ site.author.facebook }}" title="Facebook">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-          {% if site.author.github and site.footer-links-active.github %}
-          <li>
-            <a href="https://github.com/{{ site.author.github }}" title="GitHub">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.twitter and site.footer-links-active.twitter %}
-          <li>
-            <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.email and site.footer-links-active.email %}
-          <li>
-            <a href="mailto:{{ site.author.email }}" title="Email me">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.linkedin and site.footer-links-active.linkedin %}
-          <li>
-            <a href="https://linkedin.com/{{ site.author.linkedin }}" title="LinkedIn">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.author.stackoverflow and site.footer-links-active.stackoverflow %}
-          <li>
-            <a href="https://stackoverflow.com/users/{{ site.author.stackoverflow }}" title="StackOverflow">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-		  {% if site.footer-links-active.rss %}
-		  <li>
-			<a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="RSS">
-			  <span class="fa-stack fa-lg">
-				<i class="fa fa-circle fa-stack-2x"></i>
-				<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-			  </span>
-			</a>
-		  </li>		
-          {% endif %}		  
-        </ul>
-        <p class="copyright text-muted">
-		  {{ site.author.name }}
-		  &nbsp;&bull;&nbsp;
-		  {{ site.time | date: '%Y' }}
-		  
-		  {% if site.url-pretty %}
-		  &nbsp;&bull;&nbsp;
-		  <a href="{{ site.url }}">{{ site.url-pretty }}</a>
-		  {% endif %}
-	    </p>
-	        <!-- Please don't remove this, keep my open source work credited :) -->
-		<p class="theme-by text-muted">
-		  Theme by
-		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
-		</p>
-      </div>
-    </div>
-  </div>
+    <p>
+      {% if site.github_username %}
+      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+      {% endif %}
+      {% if site.facebook_username %}
+      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+        <svg><use xlink:href="#icon-facebook"></use></svg>
+      </a>
+      {% endif %}
+      {% if site.twitter_username %}
+      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+        <svg><use xlink:href="#icon-twitter"></use></svg>
+      </a>
+      {% endif %}
+      {% if site.medium_username %}
+      <a itemprop="medium" href="https://medium.com/@{{ site.medium_username }}" title="Twitter">
+        <svg><use xlink:href="#icon-medium"></use></svg>
+      </a>
+      {% endif %}
+      {% if site.instagram_username %}
+      <a itemprop="instagram" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
+        <svg><use xlink:href="#icon-instagram"></use></svg>
+      </a>
+      {% endif %}
+      {% if site.linkedin_username %}
+      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
+        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      {% endif %}
+    </p>
+    <ul>
+        {% for link in site.links %}
+          <li><a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+        <li><a class="feed" href="{{ site.url }}{{site.baseurl}}/feed.xml" title="Atom/RSS feed">Feed</a></li>
+    </ul>
+    <p><span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
 </footer>
+<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+{% include stats.html %}
