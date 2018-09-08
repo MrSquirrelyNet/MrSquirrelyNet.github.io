@@ -1,35 +1,5 @@
-# Site Settings
-title: Mr. Squirrely Blog
-email: james@mrsquirrely.net
-description: The offical blog for MrSquirrely.net
-url: "MrSquirrelyNet.github.io" # the base hostname & protocol for your site
-
-# User Settings
-username: Mr. Squirrely
-user_description: The one and only GO... umm... creator.
-
-# Social Media
-# Remove the item if you don't need it
-github_username: MrSquirrelyNet
-twitter_username: TheMrSquirrely
-
-# Build settings
-markdown: kramdown
+# General Jekyll Config
 highlighter: rouge
-permalink: /:title/
-
-# Plugins
-gems:
-  - jemoji
-
-# Links to include in menu navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-  - title: Main Site
-    external: true
-    url: http://mrsquirrely.net
-
-# Exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+url: https://mrsquirrelynet.github.io/
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
